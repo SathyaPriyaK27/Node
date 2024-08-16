@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/',(req,res)=>{
+app.get('/user',(req,res)=>{
     res.send('server running on this port')
 })
 
@@ -20,7 +20,7 @@ app.use('/api', authRoutes);
 sequelize.sync()
     .then(() => {
         app.listen(5000, () => {
-            console.log('Server is running on port 3001');
+            console.log('Server is running on port 5000');
         });
     })
     .catch(err => {
